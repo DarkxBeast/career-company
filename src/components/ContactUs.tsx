@@ -16,7 +16,7 @@ export default function ContactUs() {
           <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-8">
             <h2 className="text-5xl font-bold mb-6">Contact Us</h2>
             <p className="text-lg text-gray-700 mb-10 max-w-md">
-              Have questions or need assistance? Feel free to reach out to us. we're here to help!
+              Have questions or need assistance? Feel free to reach out to us. we&apos;re here to help!
             </p>
             <Link 
               href="/contact"

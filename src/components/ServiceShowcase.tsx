@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function ServiceShowcase() {
@@ -166,25 +167,6 @@ export default function ServiceShowcase() {
     }
   ];
 
-  // SECTION 6: Resume services
-  const resumeFeatures = [
-    {
-      id: 1,
-      feature: "ATS Friendly",
-      icon: "🔍"
-    },
-    {
-      id: 2,
-      feature: "Professional Templates",
-      icon: "📄"
-    },
-    {
-      id: 3,
-      feature: "Custom Formatting",
-      icon: "🎨"
-    }
-  ];
-
   // Function to handle category change
   const handleCategoryChange = (categoryId: string) => {
     console.log('Setting active category to:', categoryId);
@@ -269,14 +251,15 @@ export default function ServiceShowcase() {
                   >
                     {/* Background image with dark overlay */}
                     <div className="absolute inset-0">
-                      <div className="w-full h-full bg-gray-700">
-                        <img 
+                        <Image 
                           src={item.image} 
                           alt={item.title} 
                           className="w-full h-full object-cover opacity-80"
+                          width={500}
+                          height={500}
+                          priority
                         />
-                      </div>
-                      <div className="absolute inset-0 bg-black opacity-50"></div>
+                        <div className="absolute inset-0 bg-black opacity-50"></div>
                     </div>
                     
                     {/* Center the title text */}
@@ -323,10 +306,13 @@ export default function ServiceShowcase() {
                     <div className="w-full h-full bg-gray-700">
                       {/* Use an actual image if available, otherwise a placeholder */}
                       {test.imageUrl ? (
-                        <img 
+                        <Image 
                           src={test.imageUrl} 
                           alt={test.title} 
                           className="w-full h-full object-cover opacity-80"
+                          width={500}
+                          height={500}
+                          priority
                         />
                       ) : null}
                     </div>
@@ -493,10 +479,13 @@ export default function ServiceShowcase() {
               {/* Right column - Resume image */}
               <div className="w-full md:w-1/2 flex items-center justify-center">
                 <div className="relative w-full max-w-md shadow-lg rounded-lg overflow-hidden px-4">
-                  <img 
+                  <Image 
                     src="/images/resume-image.png" 
                     alt="Professional Resume Template" 
                     className="w-full h-auto"
+                    width={500}
+                    height={700}
+                    priority
                   />
                   <div className="absolute top-4 right-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center">
                     <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
