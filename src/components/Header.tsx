@@ -176,7 +176,7 @@ export default function Header() {
             <li>
               <Link 
                 href="#" 
-                className="text-[15px] font-medium hover:opacity-70 transition-opacity"
+                className="text-[15px] font-medium bg-[#FF9E44] hover:bg-[#ff9431] text-white px-6 py-2 rounded-full transition-colors"
               >
                 Login
               </Link>
@@ -346,7 +346,7 @@ export default function Header() {
           <li>
             <Link 
               href="#" 
-              className="text-[15px] font-medium block py-2 hover:opacity-70 transition-opacity"
+              className="text-[15px] font-medium block py-2 bg-[#FF9E44] hover:bg-[#ff9431] text-white px-6 rounded-full text-center transition-colors"
             >
               Login
             </Link>
@@ -355,4 +355,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}
