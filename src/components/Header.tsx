@@ -16,9 +16,11 @@ import { ChevronRight } from "lucide-react";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCompanySubMenu, setMobileCompanySubMenu] = useState(false);
-  const [mobileExploreSchoolsSubMenu, setMobileExploreSchoolsSubMenu] = useState(false);
-  const [mobileInstitutionSubMenu, setMobileInstitutionSubMenu] = useState(false);
-  
+  const [mobileExploreSchoolsSubMenu, setMobileExploreSchoolsSubMenu] =
+    useState(false);
+  const [mobileInstitutionSubMenu, setMobileInstitutionSubMenu] =
+    useState(false);
+
   const companyOptions = [
     { title: "Post a Job", href: "/post-job" },
     { title: "Post a Project", href: "/post-project" },
@@ -39,7 +41,7 @@ export default function Header() {
     { title: "Placement support", href: "/placement-support" },
     { title: "Hire our students", href: "/hire-students" },
   ];
-  
+
   const studentOptions = [
     { title: "Find Courses", href: "/courses" },
     { title: "Find Jobs & Internships", href: "/jobs" },
@@ -84,18 +86,22 @@ export default function Header() {
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                       <ul className="grid w-[220px] gap-2 p-4">
-                                        {exploreSchoolsOptions.map((subOption) => (
-                                          <li key={subOption.title}>
-                                            <NavigationMenuLink asChild>
-                                              <Link
-                                                href={subOption.href}
-                                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                              >
-                                                <div className="text-sm font-medium leading-none">{subOption.title}</div>
-                                              </Link>
-                                            </NavigationMenuLink>
-                                          </li>
-                                        ))}
+                                        {exploreSchoolsOptions.map(
+                                          (subOption) => (
+                                            <li key={subOption.title}>
+                                              <NavigationMenuLink asChild>
+                                                <Link
+                                                  href={subOption.href}
+                                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                                >
+                                                  <div className="text-sm font-medium leading-none">
+                                                    {subOption.title}
+                                                  </div>
+                                                </Link>
+                                              </NavigationMenuLink>
+                                            </li>
+                                          )
+                                        )}
                                       </ul>
                                     </NavigationMenuContent>
                                   </NavigationMenuItem>
@@ -103,12 +109,14 @@ export default function Header() {
                               </NavigationMenu>
                             ) : (
                               <NavigationMenuLink asChild>
-              <Link 
+                                <Link
                                   href={option.href}
                                   className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-              >
-                                  <div className="text-sm font-medium leading-none">{option.title}</div>
-              </Link>
+                                >
+                                  <div className="text-sm font-medium leading-none">
+                                    {option.title}
+                                  </div>
+                                </Link>
                               </NavigationMenuLink>
                             )}
                           </li>
@@ -131,12 +139,14 @@ export default function Header() {
                         {institutionOptions.map((option) => (
                           <li key={option.title}>
                             <NavigationMenuLink asChild>
-              <Link 
+                              <Link
                                 href={option.href}
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-              >
-                                <div className="text-sm font-medium leading-none">{option.title}</div>
-              </Link>
+                              >
+                                <div className="text-sm font-medium leading-none">
+                                  {option.title}
+                                </div>
+                              </Link>
                             </NavigationMenuLink>
                           </li>
                         ))}
@@ -158,12 +168,14 @@ export default function Header() {
                         {studentOptions.map((option) => (
                           <li key={option.title}>
                             <NavigationMenuLink asChild>
-              <Link 
+                              <Link
                                 href={option.href}
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-              >
-                                <div className="text-sm font-medium leading-none">{option.title}</div>
-              </Link>
+                              >
+                                <div className="text-sm font-medium leading-none">
+                                  {option.title}
+                                </div>
+                              </Link>
                             </NavigationMenuLink>
                           </li>
                         ))}
@@ -174,8 +186,8 @@ export default function Header() {
               </NavigationMenu>
             </li>
             <li>
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="text-[15px] font-medium bg-[#FF9E44] hover:bg-[#ff9431] text-white px-6 py-2 rounded-full transition-colors"
               >
                 Login
@@ -184,8 +196,8 @@ export default function Header() {
           </ul>
 
           {/* Mobile menu button */}
-          <button 
-            className="md:hidden p-2" 
+          <button
+            className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -200,7 +212,11 @@ export default function Header() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  mobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -208,51 +224,69 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out", 
+          "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
           mobileMenuOpen ? "max-h-[800px]" : "max-h-0"
         )}
       >
         <ul className="flex flex-col p-4 space-y-4">
           <li>
             <div className="py-2">
-              <button 
+              <button
                 className="text-[15px] font-medium flex items-center w-full text-left hover:opacity-70 transition-opacity"
                 onClick={() => setMobileCompanySubMenu(!mobileCompanySubMenu)}
-            >
-              For Companies
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className={`ml-1 transition-transform duration-200 ${mobileCompanySubMenu ? 'rotate-180' : ''}`}
+              >
+                For Companies
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`ml-1 transition-transform duration-200 ${
+                    mobileCompanySubMenu ? "rotate-180" : ""
+                  }`}
                 >
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
-              <div className={`pl-4 mt-2 space-y-2 ${mobileCompanySubMenu ? 'block' : 'hidden'}`}>
-                {companyOptions.map((option) => (
+              <div
+                className={`pl-4 mt-2 space-y-2 ${
+                  mobileCompanySubMenu ? "block" : "hidden"
+                }`}
+              >
+                {companyOptions.map((option) =>
                   option.hasSubmenu ? (
                     <div key={option.title}>
-                      <button 
+                      <button
                         className="text-[14px] flex items-center w-full text-left py-1 hover:opacity-70 transition-opacity"
-                        onClick={() => setMobileExploreSchoolsSubMenu(!mobileExploreSchoolsSubMenu)}
+                        onClick={() =>
+                          setMobileExploreSchoolsSubMenu(
+                            !mobileExploreSchoolsSubMenu
+                          )
+                        }
                       >
                         {option.title}
-                        <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${mobileExploreSchoolsSubMenu ? 'rotate-90' : ''}`} />
+                        <ChevronRight
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                            mobileExploreSchoolsSubMenu ? "rotate-90" : ""
+                          }`}
+                        />
                       </button>
-                      <div className={`pl-4 mt-1 space-y-2 ${mobileExploreSchoolsSubMenu ? 'block' : 'hidden'}`}>
+                      <div
+                        className={`pl-4 mt-1 space-y-2 ${
+                          mobileExploreSchoolsSubMenu ? "block" : "hidden"
+                        }`}
+                      >
                         {exploreSchoolsOptions.map((subOption) => (
-                          <Link 
+                          <Link
                             key={subOption.title}
-                            href={subOption.href} 
+                            href={subOption.href}
                             className="text-[13px] block py-1 hover:opacity-70 transition-opacity"
                           >
                             {subOption.title}
@@ -261,70 +295,78 @@ export default function Header() {
                       </div>
                     </div>
                   ) : (
-                    <Link 
+                    <Link
                       key={option.title}
-                      href={option.href} 
+                      href={option.href}
                       className="text-[14px] block py-1 hover:opacity-70 transition-opacity"
                     >
                       {option.title}
-            </Link>
+                    </Link>
                   )
-                ))}
+                )}
               </div>
             </div>
           </li>
           <li>
             <div className="py-2">
-              <button 
+              <button
                 className="text-[15px] font-medium flex items-center w-full text-left hover:opacity-70 transition-opacity"
-                onClick={() => setMobileInstitutionSubMenu(!mobileInstitutionSubMenu)}
-            >
-              For Institutions
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className={`ml-1 transition-transform duration-200 ${mobileInstitutionSubMenu ? 'rotate-180' : ''}`}
+                onClick={() =>
+                  setMobileInstitutionSubMenu(!mobileInstitutionSubMenu)
+                }
+              >
+                For Institutions
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`ml-1 transition-transform duration-200 ${
+                    mobileInstitutionSubMenu ? "rotate-180" : ""
+                  }`}
                 >
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
-              <div className={`pl-4 mt-2 space-y-2 ${mobileInstitutionSubMenu ? 'block' : 'hidden'}`}>
+              <div
+                className={`pl-4 mt-2 space-y-2 ${
+                  mobileInstitutionSubMenu ? "block" : "hidden"
+                }`}
+              >
                 {institutionOptions.map((option) => (
-                  <Link 
+                  <Link
                     key={option.title}
-                    href={option.href} 
+                    href={option.href}
                     className="text-[14px] block py-1 hover:opacity-70 transition-opacity"
                   >
                     {option.title}
-            </Link>
+                  </Link>
                 ))}
               </div>
             </div>
           </li>
           <li>
             <div className="py-2">
-              <button 
+              <button
                 className="text-[15px] font-medium flex items-center w-full text-left hover:opacity-70 transition-opacity"
                 onClick={() => setMobileMenuOpen(true)}
-            >
-              For Students & Professionals
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
+              >
+                For Students & Professionals
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="ml-1"
                 >
                   <path d="M6 9l6 6 6-6" />
@@ -332,20 +374,20 @@ export default function Header() {
               </button>
               <div className="pl-4 mt-2 space-y-2">
                 {studentOptions.map((option) => (
-                  <Link 
+                  <Link
                     key={option.title}
-                    href={option.href} 
+                    href={option.href}
                     className="text-[14px] block py-1 hover:opacity-70 transition-opacity"
                   >
                     {option.title}
-            </Link>
+                  </Link>
                 ))}
               </div>
             </div>
           </li>
           <li>
-            <Link 
-              href="#" 
+            <Link
+              href="#"
               className="text-[15px] font-medium block py-2 bg-[#FF9E44] hover:bg-[#ff9431] text-white px-6 rounded-full text-center transition-colors"
             >
               Login
