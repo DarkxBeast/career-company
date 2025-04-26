@@ -19,38 +19,43 @@ export default function FAQ() {
   const faqItems: FAQItem[] = [
     {
       id: 1,
-      question: "What makes TCC different from other career platforms or EdTech sites?",
-      answer: "The Career Company offers personalized mentorship from industry professionals, hands-on projects with real-world applications, and a supportive community network. Unlike other platforms, we focus on both skill development and career guidance, with direct connections to industry opportunities."
+      question: "How do you help institutes in accelerating placements?",
+      answer: "We work closely with institutes in two ways:To create career development modules that align with the unique needs of their students.Help campuses by bringing more companies for placements."
     },
     {
       id: 2,
-      question: "Do I get support on how to apply what I've learned in real life or job scenarios?",
-      answer: "Absolutely! Our program includes regular mentorship sessions, case study workshops, and mock interviews to help you apply your knowledge in practical settings. We also provide portfolio development guidance and career coaching throughout your journey."
+      question: "How do you help companies with hiring?",
+      answer: "We offer a plug-and-play hiring model:Campus Hiring: Gain seamless access to top-tier talent from leading institutions.Lateral Hiring: Our in-house staffing firm helps you quickly fill mid-to-senior roles with pre-vetted candidates."
     },
     {
       id: 3,
-      question: "Is this just for people from Tier 1 colleges or tech backgrounds?",
-      answer: "Not at all. The Career Company is designed to be inclusive for professionals from all educational backgrounds and career stages. We have specialized tracks for both beginners and experienced professionals, with personalized support to meet you where you are."
+      question: "Do you only help companies with campus hiring, or also lateral roles?",
+      answer: "We operate two distinct verticals:Campus Placements for fresh talent.Lateral Hiring through our recruitment services.📩 Contact us to explore hiring solutions that fit your needs."
     },
     {
       id: 4,
-      question: "How do TCC's career tracks work — is it just course access or more?",
-      answer: "Our career tracks go beyond traditional courses. Each track includes structured learning modules, regular mentorship sessions, projects with industry relevance, networking events, career counseling, and job placement assistance where applicable."
+      question: "I’m an IIM alum and actively seeking new roles. Can you help?",
+      answer: "Absolutely. Join our exclusive “1% Club”—a curated network of top professionals from elite institutions, designed for high-impact career moves."
     },
     {
       id: 5,
-      question: "Can I talk to someone before committing to a course or career track?",
-      answer: "Yes, we offer free consultation calls with our career advisors to help you determine the right path for your goals. You can discuss your background, aspirations, and get a clear understanding of our programs before making any commitment."
+      question: "Can individual students enroll in your training programs?",
+      answer: "Currently, our training programs are delivered exclusively through our partner institutions. We’ll notify you when individual access becomes available."
     },
     {
       id: 6,
-      question: "What if I get stuck or lose consistency during a program?",
-      answer: "We understand that challenges arise. That's why we provide regular check-ins, flexible scheduling options, and dedicated support. If you fall behind, our mentors will work with you to create a personalized catch-up plan to ensure you stay on track toward your goals."
+      question: "When is your web app launching?",
+      answer: "We’re launching in 6–8 weeks! Join our wait-list now and receive an exclusive 25% early-access discount."
     },
     {
       id: 7,
-      question: "Are these certifications enough to switch careers or apply abroad?",
-      answer: "Our certifications are recognized by industry partners and come with portfolios of real work, which significantly strengthen your applications. While we can't guarantee specific outcomes, our career transition success rate and international placement track record demonstrate the value employers place on our programs."
+      question: "How many institutions are you partnered with?",
+      answer: "We currently work with 15+ premier institutions, including all three generation IIMs and leading private B-schools across India."
+    },
+    {
+      id: 8,
+      question: "How can my college become a partner?",
+      answer: "We’re always excited to collaborate with forward-thinking institutions. Fill out the above form or write to cdm@thecareercompany.in to initiate the conversation."
     }
   ];
 

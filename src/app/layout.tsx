@@ -21,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} font-sans antialiased`}
-      >
-        {children}
+      <body className={`${roboto.className}`}>
+        <div className="pt-[80px]">
+          {children}
+        </div>
       </body>
     </html>
   );

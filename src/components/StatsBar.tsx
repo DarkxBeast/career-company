@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 
 export default function StatsBar() {
   const stats = [
-    { id: 1, value: "1300+", label: "Successful Career Transitions" },
-    { id: 2, value: "500%", label: "Interviews Facilitated" },
-    { id: 3, value: "50+", label: "Companies trust us for Hiring" },
+    { id: 1, value: "1300+", label: "Careers Accelerated" },
+    { id: 2, value: "2300+", label: "Practice Interviews facilitated" },
+    { id: 3, value: "250+", label: "Mentors from Top Companies" },
   ];
 
   const [animateCount, setAnimateCount] = useState(false);

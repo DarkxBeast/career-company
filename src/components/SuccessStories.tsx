@@ -8,44 +8,51 @@ export default function SuccessStories() {
   const testimonials = [
     {
       id: 1,
+      name: "Milan Barot",
+      role: "PSE Advisory Pvt. Ltd.",
+      quote: "The Career Company came into my life as a turning point. They took the time to understand my strengths and aspirations, helped me rebuild my resume, and guided me towards a career path that matched my potential. With their support, I successfully transitioned into a new role, gaining valuable skills and a 50% salary hike in just 8 months. I highly recommend them to anyone seeking meaningful career growth.",
+      image: "/images/testimonials/T4.png"
+    },
+    {
+      id: 2,
+      name: "Harshita Yadav",
+      role: "IIM-Sambalpur",
+      quote: "From the start of my journey, your guidance has played a key role in helping me bridge the gap between classroom learning and real-world experience. Thanks to The Career Company, the exposure I’ve gained especially through my current internship has added so much value to my understanding of marketing and given me the confidence.",
+      image: "/images/testimonials/T5.png"
+    },
+    {
+      id: 3,
+      name: "Dhruvi Varma",
+      role: "CarYanams",
+      quote: "The Career Company helped connect me with multiple clients & also to prepare me for interviews, boosting my confidence and ensuring I was ready to succeed.",
+      image: "/images/testimonials/T6.png"
+    },
+    {
+      id: 4,
+      name: "Anjali",
+      role: "PSE Advisory Pvt. Ltd.",
+      quote: "The Career Company has guided me through the process so effortlessly — from identifying the right opportunity to ensuring I received the best possible offer. Their patience and constant support made a huge difference, and I’m genuinely grateful for their efforts.",
+      image: "/images/testimonials/T7.png"
+    },
+    {
+      id: 5,
       name: "Ananya Yadav",
       role: "Jio Institute",
       quote: "The mentors patiently addressed all my doubts and queries, and took the time to analyse my resume in detail — offering tailored feedback and preparation strategies specific to my profile, rather than a generalized approach.",
       image: "/images/testimonials/T1.png"
     },
     {
-      id: 2,
-      name: "Akanksha Sherawat",
-      role: "IIM Kozhikode",
-      quote: "I have learnt about different techniques and approaches of Excel which I can further use in my future. The mentor was good and had the ability to engage students in the activities.",
-      image: "/images/testimonials/T2.png"
-    },
-    {
-      id: 3,
-      name: "Kanika Bhardwaj IIMK",
-      role: "IIM Kozhikode",
-      quote: "New topics were taught in the session, and we had practice questions for each topic which helped us understand them easily. The speaker made the session interactive and cleared every doubt we had during the session.",
-      image: "/images/testimonials/T3.png"
-    },
-    {
-      id: 4,
-      name: "Rahul Sharma",
-      role: "IIM Bangalore",
-      quote: "The Career Company's guidance transformed my approach to career planning. Their personalized mentorship helped me secure my dream role in consulting.",
-      image: "/images/testimonials/T1.png"
-    },
-    {
-      id: 5,
-      name: "Priya Patel",
-      role: "XLRI Jamshedpur",
-      quote: "The structured approach to interview preparation and the mock sessions were invaluable. I gained confidence and clarity about my career path.",
-      image: "/images/testimonials/T2.png"
-    },
-    {
       id: 6,
-      name: "Arjun Mehta",
-      role: "ISB Hyderabad",
-      quote: "What sets them apart is their deep understanding of industry requirements and their ability to tailor the guidance to each individual's strengths.",
+      name: "Akanksha Sherawat",
+      role: "IIM-Kozhikode",
+      quote: "I have learnt about different techniques and approaches of Excel which I can further use in my future. The mentor was good and had the ability to engage students in the activities",
+      image: "/images/testimonials/T2.png"
+    },
+    {
+      id: 7,
+      name: "Kanika Bhardwaj",
+      role: "IIM-Indore",
+      quote: "New topics were taught in the session, and we had practice questions for each topic which helped us understand them easily. The speaker made the session interactive and cleared every doubt we had during the session.",
       image: "/images/testimonials/T3.png"
     }
   ];
@@ -89,7 +96,7 @@ export default function SuccessStories() {
             {testimonials.map((testimonial) => (
               <motion.div 
                 key={testimonial.id} 
-                className="flex-shrink-0 w-[400px] bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm flex flex-col"
+                className="flex-shrink-0 w-[400px] bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center mb-4">
@@ -115,7 +122,7 @@ export default function SuccessStories() {
             {testimonials.map((testimonial) => (
               <motion.div 
                 key={`duplicate-${testimonial.id}`} 
-                className="flex-shrink-0 w-[400px] bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm flex flex-col"
+                className="flex-shrink-0 w-[400px] bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center mb-4">

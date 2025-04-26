@@ -1,31 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function JoinAsMentor() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: ""
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
-
   return (
-    <section className="w-full overflow-hidden">
+    <section id="join-mentor" className="w-full overflow-hidden">
       <div className="flex flex-col lg:flex-row mx-auto">
         {/* Left side - Black background */}
         <motion.div 
@@ -83,8 +63,7 @@ export default function JoinAsMentor() {
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              With just 20 minutes a week, you can make a real<br className="hidden md:block" />
-              difference in someone&apos;s future.
+              If you&apos;re passionate about helping young people <br/> build their careers, we have the perfect opportunity <br/> for you. With just 20 minutes a week, you can make <br/> a real difference in someone&apos;s future. We provide <br/> the platform you need to give back to society and <br/> help shape the next generation of leaders. Join us <br/> today and be a part of something truly meaningful.
             </motion.p>
           </div>
           
@@ -95,9 +74,16 @@ export default function JoinAsMentor() {
             transition={{ duration: 0.5, delay: 1 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white mr-4 flex-shrink-0"></div>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white mr-4 flex-shrink-0 relative">
+              <Image 
+                src="/images/founder.png" 
+                alt="Founder" 
+                fill
+                className="rounded-full object-cover"
+              />
+            </div>
             <div>
-              <p className="font-medium">Founder Name</p>
+              <p className="font-medium">Maharshi Vyas</p>
               <p className="text-sm text-gray-400">Founder, The Career Company</p>
             </div>
           </motion.div>
@@ -131,71 +117,22 @@ export default function JoinAsMentor() {
             If you&apos;re passionate about helping young people build their careers,<br className="hidden md:block" />
             we have the perfect opportunity for you.
           </motion.p>
-          
-          <motion.form 
-            onSubmit={handleSubmit} 
-            className="max-w-[500px]"
+
+          <motion.div
+            className="w-full min-h-[600px]"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
             viewport={{ once: true }}
           >
-            <div className="mb-5">
-              <label htmlFor="fullName" className="block text-gray-800 mb-1.5 font-medium">
-                Full name <span className="text-gray-800">*</span>
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                required
-                value={formData.fullName}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all"
-              />
-            </div>
-            
-            <div className="mb-5">
-              <label htmlFor="email" className="block text-gray-800 mb-1.5 font-medium">
-                Email address <span className="text-gray-800">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all"
-              />
-            </div>
-            
-            <div className="mb-7 sm:mb-8">
-              <label htmlFor="phone" className="block text-gray-800 mb-1.5 font-medium">
-                Phone number <span className="text-gray-800">*</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all"
-              />
-            </div>
-            
-            <motion.button
-              type="submit"
-              className="bg-[#FF9E44] hover:bg-[#FF9E44]/90 text-white px-8 sm:px-10 py-2.5 sm:py-3 rounded-full font-medium text-lg transition-all w-full sm:w-auto"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Join now
-            </motion.button>
-          </motion.form>
+            <iframe 
+              src="https://forms.zohopublic.in/thecareercompany1/form/JoinUsAsaMentor/formperma/-oe1GnlpRNkvzV6ptKFn7jLwI8cN-KbhHxubK2Q32J8"
+              className="w-full h-[600px] border-none"
+              aria-label="Contact Us"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
-} 
+}

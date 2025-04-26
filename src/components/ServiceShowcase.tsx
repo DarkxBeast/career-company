@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function ServiceShowcase() {
   // State to track active category
-  const [activeCategory, setActiveCategory] = useState('course');
+  const [activeCategory, setActiveCategory] = useState('mentorship');
 
   // Animation variants
   const containerVariants = {
@@ -31,79 +31,62 @@ export default function ServiceShowcase() {
 
   // Service categories
   const serviceCategories = [
+    { id: 'mentorship', name: '1:1 Mentorship' },
     { id: 'course', name: 'Course' },
-    { id: 'mentorship', name: 'Mentorship' },
     { id: 'findYourself', name: 'Find Yourself' },
     { id: 'projects', name: 'Projects' },
     { id: 'jobs', name: 'Jobs & Internships' },
     { id: 'resume', name: 'Resume' },
+    { id: 'industryUpdates', name: 'Industry Updates' },
   ];
 
   // SECTION 1: Courses data
   const courses = [
-  {
-    id: 1,
-      title: "Strategic Management Essentials",
-      duration: "2 Hrs",
-      price: "INR 3500",
-      provider: "ABC"
-  },
-  {
-    id: 2,
-      title: "People Management & Leadership",
-      duration: "2 Hrs",
-      price: "INR 3500",
-      provider: "ABC"
-  },
-  {
-    id: 3,
-      title: "Marketing Management Fundamentals",
-      duration: "2 Hrs",
-      price: "INR 3500",
-      provider: "ABC"
-  },
-  {
-    id: 4,
-      title: "Business Analytics & Decision Making",
-      duration: "2 Hrs",
-      price: "INR 3500",
-      provider: "ABC"
-  },
-  {
-    id: 5,
-      title: "Entrepreneurship & Innovation in Business",
-      duration: "2 Hrs",
-      price: "INR 3500",
-      provider: "ABC"
-    }
-  ];
-
-  // SECTION 2: Mentorship services
-  const mentorshipData = [
     {
       id: 1,
-      title: "Book Your 1:1 Resume Review",
-      description: "Get expert feedback on your resume and improve your chances of landing interviews.",
-      image: "/images/mentorship/MN1.png",
-      link: "#"
+      title: "Strategic Management Essentials",
+      duration: "2 Hrs",
+      provider: "IIM Nagpur",
+      icon: "/images/icons/S1.png"
     },
     {
       id: 2,
-      title: "Book your 1:1 Career Roadmap",
-      description: "Plan your career path with guidance from industry professionals.",
-      image: "/images/mentorship/MN2.png",
-      link: "#"
+      title: "People Management & Leadership",
+      duration: "2 Hrs",
+      provider: "IIM Bangalore",
+      icon: "/images/icons/S2.png"
     },
     {
       id: 3,
-      title: "Book Your 1:1 Practice Interview",
-      description: "Prepare for job interviews with mock sessions and valuable feedback.",
-      image: "/images/mentorship/MN3.png",
-      link: "#"
+      title: "Marketing Management Fundamentals",
+      duration: "2 Hrs",
+      provider: "IIM Ahmedabad",
+      icon: "/images/icons/S3.png"
+    },
+    {
+      id: 4,
+      title: "Business Analytics & Decision Making",
+      duration: "2 Hrs",
+      provider: "IIT Bombay",
+      icon: "/images/icons/S4.png"
+    },
+    {
+      id: 5,
+      title: "Entrepreneurship & Innovation in Business",
+      duration: "2 Hrs",
+      provider: "ISB Hyderabad",
+      icon: "/images/icons/S5.png"
+    },
+    {
+      id: 6,
+      title: "Financial Management & Analysis",
+      duration: "2 Hrs",
+      provider: "IIM Calcutta",
+      icon: "/images/icons/S6.png"
     }
   ];
 
-  // SECTION 3: Find Yourself personality tests
+  // SECTION 2: Find Yourself personality tests
   const personalityTests = [
     {
       id: 1,
@@ -137,33 +120,166 @@ export default function ServiceShowcase() {
     }
   ];
 
-  // SECTION 4: Projects data
-  const projects = [
-    "Supply Chain Optimization for E-Commerce",
-    "Digital Marketing Campaign Analysis",
-    "Customer Experience Improvement Strategy",
-    "Financial Modeling for Business Expansion",
-    "Business Process Automation using AI",
-    "Sustainability and ESG Reporting Framework",
-    "HR Policy Development for Hybrid Work Culture",
-    "Risk Management and Mitigation Strategy"
-  ];
-
-  // SECTION 5: Jobs data
-  const jobStatuses = ["Open", "Planned", "On Progress", "Hold", "Completed", "Closed"];
-  
-  const jobs = [
+  // SECTION 2: Mentorship services
+  const mentorshipData = [
     {
       id: 1,
-      title: "Deadline for Clustar Project",
-      date: "Dec 21, 2021",
-      time: "6:00 PM"
+      title: "Book Your 1:1 Resume Review",
+      description: "Get expert feedback on your resume and improve your chances of landing interviews.",
+      image: "/images/mentorship/MN1.png",
+      link: "#"
     },
     {
       id: 2,
-      title: "Fixing bugs on Live chat",
-      date: "Dec 14, 2021",
-      time: "3:00 PM"
+      title: "Book your 1:1 Career Roadmap",
+      description: "Plan your career path with guidance from industry professionals.",
+      image: "/images/mentorship/MN2.png",
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "Book Your 1:1 Practice Interview",
+      description: "Prepare for job interviews with mock sessions and valuable feedback.",
+      image: "/images/mentorship/MN3.png",
+      link: "#"
+    }
+  ];
+
+  // SECTION 4: Projects data
+  const projects = [
+    {
+      id: 1,
+      title: "Supply Chain Optimization for E-Commerce",
+      people: "12 Enrolled",
+      duration: "Estimated: 5 days",
+      icon: "/images/icons/C1.png"
+    },
+    {
+      id: 2,
+      title: "Digital Marketing Campaign Analysis",
+      people: "8 Enrolled",
+      duration: "Estimated: 3 weeks",
+      icon: "/images/icons/C2.png"
+    },
+    {
+      id: 3,
+      title: "Customer Experience Improvement Strategy",
+      people: "10 Enrolled",
+      duration: "Estimated: 4 weeks",
+      icon: "/images/icons/C3.png"
+    },
+    {
+      id: 4,
+      title: "Business Process Automation using AI",
+      people: "5 Enrolled",
+      duration: "Estimated: 2 weeks",
+      icon: "/images/icons/C4.png"
+    },
+    {
+      id: 5,
+      title: "Sustainability and ESG Reporting Framework",
+      people: "15 Enrolled",
+      duration: "Estimated: 6 weeks",
+      icon: "/images/icons/C5.png"
+    },
+    {
+      id: 6,
+      title: "Risk Management and Mitigation Strategy",
+      people: "3 Enrolled",
+      duration: "Estimated: 4 weeks",
+      icon: "/images/icons/C1.png"
+    }
+  ];
+
+  // SECTION 5: Jobs data
+  const jobs = [
+    {
+      id: 1,
+      title: "Senior Software Developer",
+      company: "Software Development Private Limited",
+      location: "Bangalore",
+      workType: "In Office",
+      applicants: "2359 Applicants",
+      timeLeft: "2 Days Left",
+      companyLogo: "/images/jobs/J1.png"
+    },
+    {
+      id: 2,
+      title: "Senior Software Developer",
+      company: "Software Development Private Limited",
+      location: "Mumbai",
+      workType: "WFH",
+      applicants: "2359 Applicants",
+      timeLeft: "2 Days Left",
+      companyLogo: "/images/jobs/J2.png"
+    },
+    {
+      id: 3,
+      title: "Frontend Developer",
+      company: "Software Development Private Limited",
+      location: "Hyderabad",
+      workType: "In Office",
+      applicants: "1890 Applicants",
+      timeLeft: "3 Days Left",
+      companyLogo: "/images/jobs/J3.png"
+    },
+    {
+      id: 4,
+      title: "Backend Developer",
+      company: "Software Development Private Limited",
+      location: "Delhi",
+      workType: "WFH",
+      applicants: "1567 Applicants",
+      timeLeft: "4 Days Left",
+      companyLogo: "/images/jobs/J4.png"
+    },
+    {
+      id: 5,
+      title: "Full Stack Developer",
+      company: "Software Development Private Limited",
+      location: "Chennai",
+      workType: "In Office",
+      applicants: "2100 Applicants",
+      timeLeft: "2 Days Left",
+      companyLogo: "/images/jobs/J5.png"
+    },
+    {
+      id: 6,
+      title: "DevOps Engineer",
+      company: "Software Development Private Limited",
+      location: "Kolkata",
+      workType: "WFH",
+      applicants: "1234 Applicants",
+      timeLeft: "5 Days Left",
+      companyLogo: "/images/jobs/J6.png"
+    }
+  ];
+
+  // Adding industry updates data
+  const industryUpdates = [
+    {
+      id: 1,
+      title: "New Labelling Norms Put FMCG Sector on Alert",
+      category: "Management",
+      date: "April 24, 2025",
+      readTime: "5 min read",
+      image: "/images/industry_updates/IU1.png"
+    },
+    {
+      id: 2,
+      title: "GCC workforce in India to reach 3 million by 2030",
+      category: "Business",
+      date: "April 23, 2025",
+      readTime: "4 min read",
+      image: "/images/industry_updates/IU2.png"
+    },
+    {
+      id: 3,
+      title: "Apple to Shift All U.S.-Bound iPhone Production to India by 2026",
+      category: "Tech",
+      date: "April 22, 2025",
+      readTime: "6 min read",
+      image: "/images/industry_updates/IU3.png"
     }
   ];
 
@@ -183,33 +299,63 @@ export default function ServiceShowcase() {
           <motion.div variants={itemVariants} className="mb-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-black mb-4">Find Courses</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Discover top courses across business, tech, and more to match your career goals.</p>
+              <p className="text-gray-600 mx-auto">Discover top courses across business, tech, and more. Powered by Course Central – your learning partner.<br/>
+              Find the right course to match your career goals. Start learning today and unlock your potential</p>
             </div>
 
-            <div className="max-w-5xl mx-auto px-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mb-10 justify-center">
                 {courses.map((course) => (
                   <div
                     key={course.id}
-                    className="relative h-[260px] rounded-lg overflow-hidden group cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105 bg-white"
+                    className="relative w-[360px] h-[189px] rounded-lg overflow-hidden group cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105 bg-white border border-gray-100"
                   >
-                    <div className="p-6 h-full flex flex-col">
-                      {/* Course icon/image placeholder */}
-                      <div className="w-14 h-14 rounded-full bg-gray-200 mb-4 flex items-center justify-center text-gray-400">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      
-                      {/* Course details */}
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">{course.title}</h3>
-                      <div className="mt-auto flex justify-between items-end">
-                        <div>
-                          <p className="text-sm text-gray-500">{course.duration}</p>
-                          <p className="text-sm text-gray-500">{course.provider}</p>
+                    <div className="p-4 h-full flex flex-col justify-between">
+                      <div className="flex items-start mb-1">
+                        {/* Course icon/image */}
+                        <div className="relative w-10 h-10 bg-gray-100 rounded-full flex-shrink-0 flex items-center justify-center">
+                          <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
                         </div>
-                        <div className="text-right">
-                          <p className="text-sm font-semibold text-gray-800">{course.price}</p>
+                        
+                        {/* Course title and tags */}
+                        <div className="ml-4 flex-grow">
+                          <h3 className="text-lg font-semibold text-gray-800 mb-1">{course.title}</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {course.title.toLowerCase().includes('management') && (
+                              <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full">Management</span>
+                            )}
+                            {course.title.toLowerCase().includes('leadership') && (
+                              <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full">Leadership</span>
+                            )}
+                            {course.title.toLowerCase().includes('analytics') && (
+                              <span className="px-3 py-1 bg-green-50 text-green-700 text-xs rounded-full">Analytics</span>
+                            )}
+                            {course.title.toLowerCase().includes('entrepreneurship') && (
+                              <span className="px-3 py-1 bg-orange-50 text-orange-700 text-xs rounded-full">Entrepreneurship</span>
+                            )}
+                            {course.title.toLowerCase().includes('marketing') && (
+                              <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs rounded-full">Marketing</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-end mt-auto">
+                        <div className="flex items-center pl-14">
+                          <div className="relative w-4 h-4 bg-gray-100 rounded-full flex-shrink-0 flex items-center justify-center mr-2">
+                            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                          </div>
+                          <p className="text-sm font-bold text-gray-700">{course.provider}</p>
+                        </div>
+                        <div className="flex items-center">
+                          <Image
+                            src="/images/svgs/time.svg"
+                            alt="Duration"
+                            width={16}
+                            height={16}
+                            className="mr-2"
+                          />
+                          <p className="text-sm font-bold text-gray-800">{course.duration}</p>
                         </div>
                       </div>
                     </div>
@@ -351,19 +497,65 @@ export default function ServiceShowcase() {
               <p className="text-gray-600 max-w-2xl mx-auto">Gain hands-on experience, build your skills, and work on real-world challenges!</p>
             </div>
             
-            <div className="max-w-5xl mx-auto px-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                {projects.map((project, index) => (
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mb-10 justify-center">
+                {projects.map((project) => (
                   <div
-                    key={index}
-                    className="relative h-[220px] rounded-lg overflow-hidden group cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105"
+                    key={project.id}
+                    className="relative w-[360px] h-[189px] rounded-lg overflow-hidden group cursor-pointer shadow-lg transition-transform duration-300 hover:scale-105 bg-white border border-gray-100"
                   >
-                    {/* Project background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-700"></div>
-                    
-                    {/* Project title */}
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
-                      <h3 className="text-white text-center font-semibold px-2">{project}</h3>
+                    <div className="p-4 h-full flex flex-col justify-between">
+                      <div className="flex items-start mb-2">
+                        {/* Project icon/image */}
+                        <div className="relative w-10 h-10 bg-gray-100 rounded-full flex-shrink-0 flex items-center justify-center">
+                          <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
+                        </div>
+                        
+                        {/* Project title and tags */}
+                        <div className="ml-4 flex-grow">
+                          <h3 className="text-lg font-semibold text-gray-800 mb-1">{project.title}</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.title.toLowerCase().includes('optimization') && (
+                              <span className="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full">Optimization</span>
+                            )}
+                            {project.title.toLowerCase().includes('analytics') && (
+                              <span className="px-3 py-1 bg-green-50 text-green-700 text-xs rounded-full">Analytics</span>
+                            )}
+                            {project.title.toLowerCase().includes('strategy') && (
+                              <span className="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full">Strategy</span>
+                            )}
+                            {project.title.toLowerCase().includes('automation') && (
+                              <span className="px-3 py-1 bg-orange-50 text-orange-700 text-xs rounded-full">Automation</span>
+                            )}
+                            {project.title.toLowerCase().includes('marketing') && (
+                              <span className="px-3 py-1 bg-pink-50 text-pink-700 text-xs rounded-full">Marketing</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-end mt-auto">
+                        <div className="flex items-center">
+                          <Image
+                            src="/images/svgs/Users.svg"
+                            alt="Users"
+                            width={16}
+                            height={16}
+                            className="mr-2"
+                          />
+                          <p className="text-sm font-bold text-gray-700">{project.people}</p>
+                        </div>
+                        <div className="flex items-center">
+                          <Image
+                            src="/images/svgs/time.svg"
+                            alt="Duration"
+                            width={16}
+                            height={16}
+                            className="mr-2"
+                          />
+                          <p className="text-sm font-bold text-gray-800">{project.duration}</p>
+                        </div>
+                      </div>
                     </div>
                     
                     {/* Call to action overlay on hover */}
@@ -389,72 +581,79 @@ export default function ServiceShowcase() {
       case 'jobs':
         return (
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#090914] mb-4 text-center">
-              Apply for Jobs & Internships
-                    </h2>
-            <p className="text-lg text-gray-600 text-center mb-10 max-w-3xl mx-auto">
-              Apply for jobs and internships to kickstart your career, gain experience, and grow professionally!
-            </p>
-
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="bg-gray-50 rounded-lg p-4 w-full md:w-1/3">
-                <div className="bg-[#FF9E44] text-black p-4 rounded-lg flex items-center gap-2 mb-6">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <span className="font-bold">Explore open roles</span>
-                </div>
-                
-                <div className="space-y-4">
-                  {jobStatuses.map((status, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className={`w-5 h-5 rounded border ${index < 3 ? 'border-gray-800' : 'border-gray-300'}`}>
-                        {index < 3 && (
-                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 10L9 13L14 7" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        )}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-black mb-4">Jobs & Internships</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Discover exciting career opportunities and internships to kickstart your professional journey!</p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                {jobs.map((job) => (
+                  <div
+                    key={job.id}
+                    className="w-[320px] h-[290px] bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 mx-auto flex flex-col justify-between border border-gray-100"
+                  >
+                    <div className="flex items-start justify-between space-x-4">
+                      {/* Company Logo */}
+                      <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
+                        <Image
+                          src={job.companyLogo}
+                          alt={job.company}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
-                      <span className="text-gray-800">{status}</span>
+
+                      {/* Job Title and Tags - Moved to right */}
+                      <div className="flex-1 text-right">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{job.title}</h3>
+                        <div className="flex gap-2 justify-end">
+                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">{job.location}</span>
+                          <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">{job.workType}</span>
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg border border-gray-200 p-4 w-full md:w-2/3">
-                <div className="border-b border-gray-100 pb-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="relative">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400">
-                        <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M19 19L14.5 14.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      <input type="text" placeholder="Search job, Company Name, roles." className="pl-8 pr-4 py-2 w-full border-none text-sm text-gray-500 focus:outline-none" />
-                    </div>
+
+                    {/* Stacked Company Details at bottom */}
+                    <div className="flex flex-col space-y-3 mt-auto pt-4">
+                      {/* Company Name */}
+                      <p className="text-sm text-gray-600 font-medium">{job.company}</p>
+                      
+                      {/* Applicants */}
+                      <div className="flex items-center space-x-2">
+                        <Image
+                          src="/images/svgs/Users.svg"
+                          alt="Applicants"
+                          width={16}
+                          height={16}
+                        />
+                        <span className="text-sm text-gray-600">{job.applicants}</span>
+                      </div>
+
+                      {/* Time Left */}
+                      <div className="flex items-center space-x-2">
+                        <Image
+                          src="/images/svgs/time.svg"
+                          alt="Time"
+                          width={16}
+                          height={16}
+                        />
+                        <span className="text-sm text-gray-600">{job.timeLeft}</span>
+                      </div>
                     </div>
                   </div>
-                  
-                {jobs.map((job) => (
-                  <div key={job.id} className="py-6 border-b border-gray-100">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="font-bold text-gray-900 mb-1">{job.title}</h3>
-                        <p className="text-gray-500 text-sm">{job.date} {job.time}</p>
-                      </div>
-                      <div className="flex space-x-2">
-                        <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-                        <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-                        <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4">
-                      <div className="h-3 bg-gray-100 rounded-full w-full mb-2"></div>
-                      <div className="h-3 bg-gray-100 rounded-full w-1/2"></div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Link 
+                href="/jobs" 
+                className="inline-flex items-center justify-center bg-[#FF9E44] text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-[#FF9E44]/90 transition-colors"
+              >
+                View All Jobs
+              </Link>
             </div>
           </motion.div>
         );
@@ -462,43 +661,101 @@ export default function ServiceShowcase() {
       case 'resume':
         return (
           <motion.div variants={itemVariants} className="mb-16">
-            <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto px-4">
-              {/* Left column - Simplified text content */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h2 className="text-4xl font-bold text-black mb-4">Create a Professional Resume</h2>
-                <p className="text-gray-600 mb-8">Make your first impression count with a clear, professional resume that showcases your skills and achievements.</p>
-                
-                <Link 
-                  href="/create-resume" 
-                  className="inline-flex items-center justify-center bg-[#FF9E44] text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-[#FF9E44]/90 transition-colors w-fit"
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-black mb-4">Create a Professional Resume</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Your resume is your first impression—make it count. <br />Showcase your skills, achievements, and goals with clarity.</p>
+            </div>
+            
+            {/* Video Player Section */}
+            <div className="max-w-4xl mx-auto px-4 mb-12">
+              <div className="aspect-video w-full bg-gray-100 rounded-xl overflow-hidden relative">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="/images/resume-image.png"
                 >
-                  Create my resume
-                </Link>
+                  <source src="/videos/career-company.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-              
-              {/* Right column - Resume image */}
-              <div className="w-full md:w-1/2 flex items-center justify-center">
-                <div className="relative w-full max-w-md shadow-lg rounded-lg overflow-hidden px-4">
-                  <Image 
-                    src="/images/resume-image.png" 
-                    alt="Professional Resume Template" 
-                    className="w-full h-auto"
-                    width={500}
-                    height={700}
-                    priority
-                  />
-                  <div className="absolute top-4 right-4 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center">
-                    <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    ATS Friendly
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            </div>
+
+            <div className="text-center">
+              <Link 
+                href="/create-resume" 
+                className="inline-flex items-center justify-center bg-[#FF9E44] text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-[#FF9E44]/90 transition-colors"
+              >
+                Create my resume
+              </Link>
+            </div>
+          </motion.div>
         );
-      
+
+      // Add industry updates section after resume case
+      case 'industryUpdates':
+        return (
+          <motion.div variants={itemVariants} className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-black mb-4">Industry Updates</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Stay informed with the latest trends, insights, and developments across various industries</p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-10 justify-items-center">
+                {industryUpdates.map((update) => (
+                  <div
+                    key={update.id}
+                    className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group cursor-pointer w-[320px] hover:scale-105"
+                  >
+                    <div className="relative h-48 bg-gray-100">
+                      <Image
+                        src={update.image}
+                        alt={update.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-white/90 text-gray-800 text-sm font-medium rounded-full">
+                          {update.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                        {update.title}
+                      </h3>
+                      
+                      <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
+                        <span>{update.date}</span>
+                        <div className="flex items-center">
+                          <Image
+                            src="/images/svgs/time.svg"
+                            alt="Read time"
+                            width={16}
+                            height={16}
+                            className="mr-2"
+                          />
+                          <span>{update.readTime}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Link 
+                href="/industry-updates" 
+                className="inline-flex items-center justify-center bg-[#FF9E44] text-black px-8 py-3 rounded-full font-bold text-lg hover:bg-[#FF9E44]/90 transition-colors"
+              >
+                View All Updates
+              </Link>
+            </div>
+          </motion.div>
+        );
+
       default:
         return null;
     }
@@ -541,4 +798,4 @@ export default function ServiceShowcase() {
       </div>
     </section>
   );
-} 
+}

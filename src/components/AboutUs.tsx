@@ -52,7 +52,7 @@ export default function AboutUs() {
   }, [isClient]); // Only re-run if isClient changes
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
+    <section id="about-us" className="w-full py-16 md:py-24 bg-white">
       <div className="max-w-[1440px] mx-auto px-4 relative">
         {/* White container with content */}
         <div className="ml-auto w-full md:w-[85%] lg:w-[75%] p-6 md:p-12 pt-12 md:pt-16 bg-white rounded-[50px] shadow-lg border border-[#D9D9D9] relative z-10">

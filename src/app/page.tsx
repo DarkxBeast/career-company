@@ -10,6 +10,7 @@ import FAQ from "@/components/FAQ";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import ServiceShowcase from "@/components/ServiceShowcase";
+import MentorFrom from "@/components/MentorsFrom";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Trusted By Section */}
       <TrustedBy />
+
+      {/* Trusted By Section */}
+      <MentorFrom />
 
       {/* About Us Section */}
       <AboutUs />

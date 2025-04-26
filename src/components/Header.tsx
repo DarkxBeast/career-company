@@ -16,10 +16,9 @@ import { ChevronRight } from "lucide-react";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCompanySubMenu, setMobileCompanySubMenu] = useState(false);
-  const [mobileExploreSchoolsSubMenu, setMobileExploreSchoolsSubMenu] =
-    useState(false);
-  const [mobileInstitutionSubMenu, setMobileInstitutionSubMenu] =
-    useState(false);
+  const [mobileExploreSchoolsSubMenu, setMobileExploreSchoolsSubMenu] = useState(false);
+  const [mobileInstitutionSubMenu, setMobileInstitutionSubMenu] = useState(false);
+  const [mobileStudentSubMenu, setMobileStudentSubMenu] = useState(false);
 
   const companyOptions = [
     { title: "Post a Job", href: "/post-job" },
@@ -52,7 +51,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full border-b">
+    <header className="w-full border-b fixed top-0 left-0 bg-white z-50">
       <div className="flex items-center">
         {/* Logo Section */}
         <div className="bg-black text-white p-4 flex items-center h-[80px]">
@@ -76,37 +75,32 @@ export default function Header() {
                     <NavigationMenuContent>
                       <ul className="grid w-[240px] gap-2 p-4">
                         {companyOptions.map((option) => (
-                          <li key={option.title}>
+                          <li key={option.title} className="relative">
                             {option.hasSubmenu ? (
-                              <NavigationMenu>
-                                <NavigationMenuList>
-                                  <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="flex w-full justify-between text-sm font-medium rounded-md p-3 hover:bg-accent hover:text-accent-foreground">
-                                      {option.title}
-                                    </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                      <ul className="grid w-[220px] gap-2 p-4">
-                                        {exploreSchoolsOptions.map(
-                                          (subOption) => (
-                                            <li key={subOption.title}>
-                                              <NavigationMenuLink asChild>
-                                                <Link
-                                                  href={subOption.href}
-                                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                >
-                                                  <div className="text-sm font-medium leading-none">
-                                                    {subOption.title}
-                                                  </div>
-                                                </Link>
-                                              </NavigationMenuLink>
-                                            </li>
-                                          )
-                                        )}
-                                      </ul>
-                                    </NavigationMenuContent>
-                                  </NavigationMenuItem>
-                                </NavigationMenuList>
-                              </NavigationMenu>
+                              <div className="block select-none space-y-1 rounded-md p-3 leading-none hover:bg-accent group relative">
+                                <div className="flex justify-between items-center text-sm font-medium">
+                                  {option.title}
+                                  <ChevronRight className="h-4 w-4 ml-1" />
+                                </div>
+                                
+                                {/* Submenu container that appears on hover */}
+                                <div className="invisible group-hover:visible absolute left-0 z-20 top-0 ml-1 w-[220px] rounded-md border bg-white shadow-md">
+                                  <ul className="grid gap-2 p-4">
+                                    {exploreSchoolsOptions.map((subOption) => (
+                                      <li key={subOption.title}>
+                                        <Link
+                                          href={subOption.href}
+                                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                        >
+                                          <div className="text-sm font-medium leading-none">
+                                            {subOption.title}
+                                          </div>
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
                             ) : (
                               <NavigationMenuLink asChild>
                                 <Link
@@ -128,33 +122,12 @@ export default function Header() {
               </NavigationMenu>
             </li>
             <li>
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-[15px] font-medium bg-transparent hover:bg-transparent hover:opacity-70 transition-opacity">
-                      For Institutions
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[240px] gap-2 p-4">
-                        {institutionOptions.map((option) => (
-                          <li key={option.title}>
-                            <NavigationMenuLink asChild>
-                              <Link
-                                href={option.href}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              >
-                                <div className="text-sm font-medium leading-none">
-                                  {option.title}
-                                </div>
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
+              <Link
+                href="/institution-partner"
+                className="text-[15px] font-medium hover:opacity-70 transition-opacity"
+              >
+                For Institutions
+              </Link>
             </li>
             <li>
               <NavigationMenu>
@@ -224,12 +197,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          mobileMenuOpen ? "max-h-[800px]" : "max-h-0"
-        )}
-      >
+      <div className={cn("md:hidden overflow-hidden transition-all duration-300 ease-in-out", mobileMenuOpen ? "max-h-[800px]" : "max-h-0")}>
         <ul className="flex flex-col p-4 space-y-4">
           <li>
             <div className="py-2">
@@ -354,7 +322,7 @@ export default function Header() {
             <div className="py-2">
               <button
                 className="text-[15px] font-medium flex items-center w-full text-left hover:opacity-70 transition-opacity"
-                onClick={() => setMobileMenuOpen(true)}
+                onClick={() => setMobileStudentSubMenu(!mobileStudentSubMenu)}
               >
                 For Students & Professionals
                 <svg
@@ -367,12 +335,12 @@ export default function Header() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="ml-1"
+                  className={`ml-1 transition-transform duration-200 ${mobileStudentSubMenu ? "rotate-180" : ""}`}
                 >
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
-              <div className="pl-4 mt-2 space-y-2">
+              <div className={`pl-4 mt-2 space-y-2 ${mobileStudentSubMenu ? "block" : "hidden"}`}>
                 {studentOptions.map((option) => (
                   <Link
                     key={option.title}

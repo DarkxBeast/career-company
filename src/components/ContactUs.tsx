@@ -10,92 +10,25 @@ export default function ContactUs() {
     if (activeTab === 'Institutions') {
       return (
         <>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Institution name</label>
-            <input 
-              type="text" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Institution name"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Your name</label>
-            <input 
-              type="text" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Your name"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Your Designation</label>
-            <input 
-              type="text" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Your Designation"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Email address</label>
-            <input 
-              type="email" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Email address"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Phone Number</label>
-            <input 
-              type="tel" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Phone number"
-              placeholder=""
-            />
-          </div>
+        <div className="w-full h-[800px]">
+          <iframe 
+            src="https://forms.zohopublic.in/thecareercompany1/form/ContactUs2/formperma/ZDy9VAOAz_VqWfGb_DWmANrg9R2K31-CdWWxDjQ7Zr8"
+            className="w-full h-full border-none"
+            aria-label="Contact Us"
+          />
+        </div>
         </>
       );
     } else {
       return (
         <>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Your Name</label>
-            <input 
-              type="text" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Your name"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Your Designation</label>
-            <input 
-              type="text" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Your designation"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Phone Number</label>
-            <input 
-              type="tel" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Phone number"
-              placeholder=""
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Email</label>
-            <input 
-              type="email" 
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              title="Email address"
-              placeholder=""
-            />
-          </div>
+        <div className="w-full h-[800px]">
+          <iframe 
+            src="https://forms.zohopublic.in/thecareercompany1/form/ContactUsCompanies/formperma/Mm5jYNZ8wY1aaNwiI1jSFwl-_SVZPa6UZU6ACrKncfw"
+            className="w-full h-full border-none"
+            aria-label="Contact Us"
+          />
+        </div>
         </>
       );
     }
@@ -128,8 +61,8 @@ export default function ContactUs() {
         </div>
         
         {/* Right side - Form */}
-        <div className="md:w-1/2 bg-white px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-10 md:py-16"> {/* Adjusted padding for mobile */}
-          <div className="max-w-[500px] mx-auto">
+        <div className="md:w-1/2 bg-white px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-10 md:py-16 flex items-center justify-center"> {/* Added flex and centering */}
+          <div className="w-full max-w-[600px] mx-auto"> {/* Adjusted max-width and width */}
             {/* Tab Switcher */}
             <div className="flex justify-center gap-2 sm:gap-4 mb-6 sm:mb-8 p-1 rounded-full border-2 border-gray-900 w-fit mx-auto">
               <button
@@ -155,17 +88,9 @@ export default function ContactUs() {
             </div>
 
             {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4 sm:space-y-5">
+            <div className="space-y-4 sm:space-y-5 flex justify-center"> {/* Added flex and justify-center */}
               {renderForm()}
-              <div className="text-center mt-6 sm:mt-8">
-                <button 
-                  type="submit" 
-                  className="w-full sm:w-auto bg-gray-900 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
